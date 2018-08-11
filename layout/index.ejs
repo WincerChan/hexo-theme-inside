@@ -13,11 +13,21 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
 <%- open_graph({ image: page.thumbnail }) %>
-<% if (config.feed && config.feed.path) {
-%><link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">
-<% }
+<% if (config.feed && config.feed.path) {%>
+<link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">
+<%}
 %><%- load_css() %>
-<%- css('theme.' + theme.themeHash)%>
+<% if (page.slug === "d67271d8"){ %>
+<script src="/js/crypto-js.js"></script>
+<script>var onError = function(error) { document.querySelector("#enc_error").innerHTML = "密码错误！"; }; function decrypt() { var passwd = document.querySelector("#enc_passwd input").value; console.log(passwd); doDecrypt(passwd, onError); }
+function EnterPress(e){
+    var e = window.event || e;
+    if (e.keyCode == 13){
+        decrypt();
+    }
+};function doDecrypt(e,t){console.log("in doDecrypt");var n=document.getElementById("enc_content").innerHTML;try{var c=CryptoJS.AES.decrypt(n,e);plaintext=c.toString(CryptoJS.enc.Utf8)}catch(e){return void(t&&t(e))}document.getElementById("enc_content").innerHTML=plaintext,document.getElementById("enc_content").style.display="block",document.getElementById("enc_passwd").style.display="none"}</script>
+<%} %>
+<!-- <%- css('theme.' + theme.themeHash)%> -->
 <%- ga() %>
 <%- js('config.' + theme.hash) %>
 </head>

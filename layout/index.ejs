@@ -16,8 +16,13 @@
 <% if (config.feed && config.feed.path) {
 %><link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">
 <% }
+<<<<<<< HEAD
 %><%- load_css() %>
 <%- css('theme.' + theme.themeHash)%>
+=======
+%><%- css('theme.' + theme.themeHash)%>
+<%- load_css() %>
+>>>>>>> cc04dfb9579c50e44fa790855f10dd7b6c2966d4
 <%- ga() %>
 <%- js('config.' + theme.hash) %>
 </head>

@@ -13,7 +13,6 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
 <%- open_graph({ image: page.thumbnail }) %>
-<<<<<<< HEAD
 <% if (config.feed && config.feed.path) {%>
 <link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">
 <%}
@@ -29,18 +28,11 @@ function EnterPress(e){
 };function doDecrypt(e,t){console.log("in doDecrypt");var n=document.getElementById("enc_content").innerHTML;try{var c=CryptoJS.AES.decrypt(n,e);plaintext=c.toString(CryptoJS.enc.Utf8)}catch(e){return void(t&&t(e))}document.getElementById("enc_content").innerHTML=plaintext,document.getElementById("enc_content").style.display="block",document.getElementById("enc_passwd").style.display="none"}</script>
 <%} %>
 <!-- <%- css('theme.' + theme.themeHash)%> -->
-=======
 <% if (config.feed && config.feed.path) {
 %><link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">
 <% }
-<<<<<<< HEAD
 %><%- load_css() %>
 <%- css('theme.' + theme.themeHash)%>
-=======
-%><%- css('theme.' + theme.themeHash)%>
-<%- load_css() %>
->>>>>>> cc04dfb9579c50e44fa790855f10dd7b6c2966d4
->>>>>>> master
 <%- ga() %>
 <%- js('config.' + theme.hash) %>
 </head>

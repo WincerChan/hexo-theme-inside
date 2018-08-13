@@ -11,6 +11,11 @@ profile:
   email: WincerChan@gmail.com
   bio: Carpe diem.
 
+# HTTP head tag
+head:
+  structured_data: true
+  favicon: /favicon.ico
+
 # Social media
 # Try to sort by changing the order of the keys
 sns:

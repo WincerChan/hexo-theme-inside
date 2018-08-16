@@ -12,11 +12,13 @@
 %><meta name="theme-color" content="<%= theme.manifest.theme_color %>">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+<link rel="stylesheet" href="https://res.cloudinary.com/wincer/raw/upload/v1534310671/static/styles.css">
+<!-- <script src="https://gitee.com/whisk/blog_api/raw/master/vendor.js" async="async"></script> -->
 <%- open_graph({ image: page.thumbnail }) %>
 <% if (config.feed && config.feed.path) {%>
 <link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">
 <%}
-%><%- load_css() %>
+%><!-- <%- load_css() %> -->
 <% if (page.encrypt === true){ %>
 <script src="/js/crypto-js.js"></script>
 <script>var onError = function(error) { document.querySelector("#enc_error").innerHTML = "密码错误！"; }; function decrypt() { var passwd = document.querySelector("#enc_passwd input").value; console.log(passwd); doDecrypt(passwd, onError); }
@@ -35,13 +37,14 @@ function EnterPress(e){
 <% if (theme.head.structured_data === true ){ %>
     <%- partial('structured-data') %>
 <% } %>
-<%- css('theme.' + theme.themeHash)%>
-<%- load_css() %>
-<%- ga() %>
-<%- js('config.' + theme.hash) %>
+<!-- <%- css('theme.' + theme.themeHash)%> -->
+<!-- <%- load_css() %> -->
+<!-- <%- ga() %> -->
+<!-- <%- js('config.' + theme.hash) %> -->
 </head>
 <body>
 <is-root></is-root>
-<%- load_js() %>
+<!-- <%- load_js() %> -->
 </body>
 </html>
+<script>window.ga=function(e=0,t=0,n=window,a=document,i=navigator){var g=n.screen,o=encodeURIComponent,r=["ga=UA-101362832-5","dt="+o(a.title),"dr="+o(a.referrer),"ul="+(i.language||i.browserLanguage||i.userLanguage),"sd="+g.colorDepth+"-bit","sr="+g.width+"x"+g.height,"vp="+Math.max(a.documentElement.clientWidth,n.innerWidth||0)+"x"+Math.max(a.documentElement.clientHeight,n.innerHeight||0),"z="+ +new Date];n.__ga_img=new Image,n.__ga_img.src="https://ga.itswincer.com?"+r.join("&")};</script><script>console.log(` %c © Wincer's Home | Author: Wincer %c https://github.com/WincerChan/home `,"color: #fff; background-image: linear-gradient(90deg, rgb(18, 103, 144) 0%, rgb(0, 151, 167) 100%); padding:5px 1px;","background-image: linear-gradient(90deg, rgb(18, 103, 144) 0%, rgb(194, 194, 194) 0%); padding:5px 0;")</script>

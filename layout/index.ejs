@@ -24,6 +24,7 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="480">
 <% if( page.slug ) { %>
+<link rel="canonical" href="<%- config.url + url_for(path).slice(0, -10) %>">
 <meta name="keywords" content="<% if(page.tags && page.tags.each) { page.tags.each(function(tag) { %><%- ',' + tag.name %><% })} %>Wincer, Wincer Blog, Blog">
 <meta name="description" content="<% if(page.description) { %><%= page.description %><% } else if(page.excerpt){ %><%= strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '') %><% } else if (config.description){ %><%= config.description %><% } %>">
 <meta property="og:url" content="<%- config.url + url_for(path).slice(0, -10) %>">
@@ -44,6 +45,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="<%- config.url + url_for(path).slice(0, -10) %>">
 <% } else { %>
+<link rel="canonical" href="<%= config.url %>">
 <meta name="keywords" content="Wincer, Wincer Blog, Blog">
 <meta name="description" content="<%= config.description %>">
 <meta property="og:url" content="<%= config.url %>">

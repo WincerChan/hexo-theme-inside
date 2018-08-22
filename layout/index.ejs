@@ -45,7 +45,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="<%- config.url + url_for(path).slice(0, -10) %>">
 <% } else { %>
-<link rel="canonical" href="<%= config.url %>">
+<link rel="canonical" href="<%= config.url + url_for(path).slice(0, -10) %>">
 <meta name="keywords" content="Wincer, Wincer Blog, Blog">
 <meta name="description" content="<%= config.description %>">
 <meta property="og:url" content="<%= config.url %>">

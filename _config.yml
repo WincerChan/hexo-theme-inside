@@ -104,4 +104,4 @@ manifest:
         type: image/png
 
 # Google analytics
-# ga: UA-00000000-0
+ga: UA-101362832-1

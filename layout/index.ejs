@@ -96,7 +96,7 @@ function upadteBio(){
     .then(response => response.text())
     .then(response => bio.innerHTML = response)
 }
-setInterval(upadteBio, 30000)
+upadteBio()
 }, false)
 </script>
 <%- ga() %>

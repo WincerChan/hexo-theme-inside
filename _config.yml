@@ -1,5 +1,6 @@
 # Sidebar menu
 menu:
+  friends: /friends
   about: /about
   home: /
   life: /life
